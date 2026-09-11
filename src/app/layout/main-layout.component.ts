@@ -14,7 +14,12 @@ import { SidebarComponent } from './sidebar.component';
       <app-sidebar [open]="sidebarOpen()" (navigated)="sidebarOpen.set(false)" />
 
       @if (sidebarOpen()) {
-        <div class="fixed inset-0 z-30 bg-slate-900/40 lg:hidden" (click)="sidebarOpen.set(false)"></div>
+        <button
+          type="button"
+          class="fixed inset-0 z-30 h-full w-full cursor-default bg-slate-900/40 lg:hidden"
+          aria-label="Close navigation"
+          (click)="sidebarOpen.set(false)"
+        ></button>
       }
 
       <div class="lg:pl-64">

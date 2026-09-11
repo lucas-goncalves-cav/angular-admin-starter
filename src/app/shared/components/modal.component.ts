@@ -8,7 +8,12 @@ import { IconComponent } from './icon.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" (click)="closed.emit()"></div>
+      <button
+        type="button"
+        class="absolute inset-0 h-full w-full cursor-default bg-slate-900/50 backdrop-blur-sm"
+        aria-label="Close dialog"
+        (click)="closed.emit()"
+      ></button>
       <div
         class="card relative z-10 w-full max-w-lg p-6"
         role="dialog"

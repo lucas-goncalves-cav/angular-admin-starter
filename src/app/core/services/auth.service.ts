@@ -36,7 +36,12 @@ export class AuthService {
           return throwError(() => new Error('Invalid email or password.'));
         }
 
-        const { password, ...user } = account;
+        const user: AuthenticatedUser = {
+          id: account.id,
+          name: account.name,
+          email: account.email,
+          role: account.role
+        };
 
         return of<AuthSession>({
           token: this.createFakeJwt(user),
